@@ -1,0 +1,114 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	
+
+}
+select {
+	font-size: 16px;
+    border-radius: 8px;
+    border-style: none;
+    padding: 5px;
+    margin-top: 5px;
+
+}
+
+option:checked {
+	background: green;
+	-webkit-background: green;
+	-moz-background: green;
+	font-weight: bold;
+	color: #ffffff;
+	border-color: #7d4cae;
+}
+option:hover {
+	background: #7d4cae;
+}
+span {
+	color: #7d4cae;
+	text-transform: uppercase;
+	font-size: 14px;
+	/*padding-left: 2px;*/
+	word-wrap: break-word;
+}
+
+.refinement-select:first-child{
+	width: 140px;
+}
+
+#refinement {
+	position: fixed;
+	top:0;
+	padding-bottom: 10px; 
+	width: 100%;
+	background: linear-gradient(to bottom, rgba(224, 235, 235, 0.9) 30%, rgba(103, 126, 126, 0.3) 70%);
+	
+}
+
+.refinement-wrapper  {
+	margin: 5px 0px 0px 8px;
+}
+
+.refinement-select {
+	float: left;
+	margin-right: 3%;
+	width: 15%;
+	opacity: 1;
+}
+
+.refinement-select-clear {
+	float: right;
+	margin-left: 3px;
+	margin-bottom: 0px;
+	margin-top: -4px;
+	font-size: 20px;
+    color: #7d4cae;
+    font-family: 'Gaegu', cursive;
+    font-weight: bold;
+    cursor: pointer;
+}
+.refinement-select-clear:hover {
+	color: #4CAF50;
+}
+	
+.refinement-select  select{
+	width: 100%;
+}
+
+.refinement-action  {
+	float: left;
+	margin-left: 15px;
+}
+
+
+.js-filter {
+	background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    margin-left: -30px;
+    margin-top: 42px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.js-filter:hover {
+	background-color: #7d4cae;
+}
+
+/*@media screen and (max-width: 1239px){
+	span {
+	
+}
+
+}*/
+
+#map {
+	height: 100%;
+}

@@ -1,0 +1,57 @@
+p {
+	margin: 0px 0px 2px 0px;
+}
+
+.title {
+	font-style: italic;
+    font-weight: bold;
+    color: darkcyan;
+}
+
+.owner {
+	font-weight: bold;
+    color: darkmagenta;
+	font-size: 15px;
+}
+
+.name {
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.years {
+	line-height: 17px;
+}
+
+.year {
+	font-weight: bold;
+    color: darkslategrey;
+	font-size: 11px;
+}
+.year-always {
+	font-weight: bold;
+	font-size: 15px;
+	color: darkred;
+}
+
+.description-title {
+	margin-top: 7px;
+	color: darkgreen;
+	font-weight: bold;
+}
+.description {
+	color: darkolivegreen;
+}
+
+.available {
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+.available.yes {
+	color: blue;
+}
+
+.available.no {
+	color: red;
+}

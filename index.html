@@ -1,0 +1,82 @@
+<html>
+<head>
+    <title>Google maps test</title>
+    <meta content="text/html; charset=Windows-1251" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/map.css">
+	
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Caveat|Gaegu" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <script id="googleMap" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0mX4xSUEHCf3xk9rVCe-qsPfWvdZTCJY"></script>
+</head>
+<body>
+	
+    <div id="map"></div>
+    <div id="refinement"></div>
+	
+	<!-- Template scripts -->
+	<script id="markerInfo" type="text/template">
+		<p class="available <%print(available ? "yes" : "no")%>">
+			<%print(available ? "Доступно" : "Недоступно")%>
+		</p>
+		<hr>
+		<p>
+			<span class="title">Кто:</span>
+			<%for (var i = 0, len = owners.length; i<len; i++) {%>
+				<%var owner = owners[i];%>
+				<span class="owner" title="<%=owner%>"><%=owner.split(" ").reduce(function(memo, el) {return memo + el[0];}, "")%></span>
+			<%}%>
+		</p>
+		<p>
+			<span class="title">Где:</span>
+			<span class="name"><%=name%></span>
+		</p>
+		<p class="years">
+			<span class="title">Когда:</span>
+			<%if (typeof years!=="undefined") {%>
+				<%for (var i = 0, len = years.length; i<len; i++) {%>
+					<span class="year"><%=years[i]%></span>
+				<%}%>
+			<%} else {%>
+				<span class="year-always">Всегда</span>
+			<%}%>
+		</p>
+		<hr>
+		<p class="description-title">Описание</p>
+		<p class="description"><%=description%></p>
+	</script>
+	<script id="refinementPanel" type="text/template">
+		<div class="refinement-wrapper">
+			<%for (var key in this) {%>
+				<div class="refinement-select">
+					<%var isMultiple = getDataSetting(key + ".multiple");%>
+					<span><%=getDisplayName(key)%></span>
+					<%if (isMultiple) {%>
+						<span class="js-clear refinement-select-clear">x</span>
+					<%}%>
+					<div>
+						<select name=<%=key%><%print(isMultiple ? " multiple size='4'" : "");%>>
+							<%if (!isMultiple) {%>
+								<option value="">Все</option>
+							<%}%>
+							<%var filterValues = this[key];%>
+							<%for (var i = 0, len = filterValues.length; i<len; i++) {%>
+								<%var filterValue = filterValues[i];%>
+								<option value="<%=filterValue%>"><%=getDisplayName(filterValue)%></option>
+							<%}%>
+						</select>
+					</div>
+				</div>
+			<%}%>
+			<div class="refinement-action">
+				<button class = "js-filter">Фильтровать</button>
+			</div>
+		</div>
+	</script>
+	
+	<script src="js/utils.js"></script>
+	<script src="js/googleMapModels.js"></script>
+    <script src="js/googleMap.js"></script>
+</body>
+</html>
